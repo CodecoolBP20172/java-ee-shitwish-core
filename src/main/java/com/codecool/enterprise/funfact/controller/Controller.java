@@ -1,7 +1,6 @@
 package com.codecool.enterprise.funfact.controller;
 
 import com.codecool.enterprise.funfact.service.ApiService;
-import com.codecool.enterprise.funfact.service.JsonReader;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
