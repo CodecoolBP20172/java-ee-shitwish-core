@@ -1,4 +1,4 @@
-package com.codecool.enterprise.funfact.service;
+package com.codecool.enterprise.shitwish.service;
 
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;

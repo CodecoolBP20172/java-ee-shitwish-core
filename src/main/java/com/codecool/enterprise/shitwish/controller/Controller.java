@@ -1,6 +1,6 @@
-package com.codecool.enterprise.funfact.controller;
+package com.codecool.enterprise.shitwish.controller;
 
-import com.codecool.enterprise.funfact.service.ApiService;
+import com.codecool.enterprise.shitwish.service.ApiService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

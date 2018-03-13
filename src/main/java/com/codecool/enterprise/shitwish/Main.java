@@ -1,4 +1,4 @@
-package com.codecool.enterprise.funfact;
+package com.codecool.enterprise.shitwish;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
