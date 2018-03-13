@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="funfact-service" />
+        <module name="shitwish-core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="funfact-service" target="1.8" />
+      <module name="shitwish-core" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

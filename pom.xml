@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.codecool.enterprise</groupId>
-    <artifactId>funfact-service</artifactId>
+    <artifactId>shitwish-core</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
