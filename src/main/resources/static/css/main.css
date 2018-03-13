@@ -1,0 +1,120 @@
+.container{
+    width: 90%;
+}
+
+.card{
+    margin: 2%;
+    border: 1px solid #4c4c4c;
+    display: inline-block;
+    border-radius: 2px 2px 2px 2px;
+    width: 15rem;
+}
+
+.card:first-child{
+    margin-left: 8%;
+}
+
+.card:last-child{
+    margin-right: 5%;
+}
+
+.card-body {
+    background-color: #f8f9ff;
+}
+
+.card-img-top{
+    object-fit: contain;
+    height: 200px;
+    width: 100%;
+}
+
+
+.title{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-title{
+    display: inline-block;
+}
+
+.price {
+    display: inline-block;
+    float: right;
+}
+
+
+
+.card-img-top:hover {
+    opacity: 0.3;
+}
+
+.card-text{
+    margin: 3%;
+}
+
+.body{
+    width:95%;
+}
+
+.card .btn {
+    border-radius: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: rgb(241, 196,15);
+    border: none;
+    color: #34495e;
+    font-weight: lighter;
+}
+
+.middle {
+    transition: .7s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+.card-container:hover .card-img-top {
+    opacity: 0.3;
+}
+
+
+.card-container:hover .card-img-top .a:link {
+    text-decoration: none;
+}
+
+.card-container:hover .middle {
+    opacity: 1;
+}
+
+.card-container{
+    position: relative;
+}
+
+.middle:hover {
+    text-decoration: none;
+}
+
+
+
+.carousel-control-prev{
+    width: 5%;
+}
+
+.carousel-control-next{
+    width: 5%;
+}
+
+.carousel-inner{
+    background-color: #ecf0f1;
+}
+
+

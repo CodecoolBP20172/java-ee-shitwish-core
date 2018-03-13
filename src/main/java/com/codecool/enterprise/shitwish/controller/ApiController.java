@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 
 @RestController
-public class Controller {
+public class ApiController {
 
     @Autowired
     private ApiService apiService;

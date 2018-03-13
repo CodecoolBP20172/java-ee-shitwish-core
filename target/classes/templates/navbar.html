@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="navbar">
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
+                <ul class="navbar-nav mr-auto">
+                    <li>
+                        <a href="shopping_cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
+                    </li>
+                    <li>
+                        <a href="#" data-target="#signUp" class="signup_modal_toggle"><span class="glyphicon glyphicon-user"></span><span class="sign_up_text">Sign Up</span></a>
+                    </li>
+                    <li>
+                        <a href="#" data-target="#login" class="login_modal_toggle"><span class="glyphicon glyphicon-log-in"></span><span class="login_text">Login</span></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Active</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </body>
+</html>

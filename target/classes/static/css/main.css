@@ -11,7 +11,7 @@
 }
 
 .card:first-child{
-    margin-left: 5%;
+    margin-left: 8%;
 }
 
 .card:last-child{
@@ -24,25 +24,35 @@
 
 .card-img-top{
     object-fit: contain;
+    height: 200px;
+    width: 100%;
+}
+
+
+.title{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .card-title{
-    text-align: center;
-    background-color: antiquewhite;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-top: 0;
-    margin-bottom: 0;
+    display: inline-block;
 }
+
+.price {
+    display: inline-block;
+    float: right;
+}
+
+
 
 .card-img-top:hover {
     opacity: 0.3;
 }
 
-
 .card-text{
     margin: 3%;
-    height: 85px;
 }
 
 .body{
@@ -56,8 +66,8 @@
     object-fit: contain;
     background-color: rgb(241, 196,15);
     border: none;
-    color: rgb(44,62,80);
-    font-weight: bold;
+    color: #34495e;
+    font-weight: lighter;
 }
 
 .middle {
@@ -95,12 +105,6 @@
 
 
 
-
-.carousel-control-next-icon {
-    color: rgb(241, 196,15);
-}
-
-
 .carousel-control-prev{
     width: 5%;
 }
@@ -110,5 +114,7 @@
 }
 
 .carousel-inner{
-    background-color: gray;
+    background-color: #ecf0f1;
 }
+
+
