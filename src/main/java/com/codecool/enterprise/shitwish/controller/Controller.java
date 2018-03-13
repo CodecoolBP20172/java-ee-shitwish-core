@@ -15,10 +15,18 @@ public class Controller {
 
     private String EXAMPLEAPIURL = "https://api.chucknorris.io/jokes/random";
 
+    private String REGISTERURL = "https://herokublabla/register";
+
     @GetMapping(value = "/getjson")
     public String getJson() throws IOException {
         JSONObject jsonInfo = apiService.getJson(EXAMPLEAPIURL);
         return jsonInfo.toMap().toString();
+    }
+
+    @GetMapping(value = "/register")
+    public void registerUser() throws IOException {
+        String userJsonString = ""; // taking the information from the registration form and parsing into
+        apiService.postJson(REGISTERURL, userJsonString);
     }
 
 }
