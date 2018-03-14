@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <body>
-    <div th:replace="form :: registerform"></div>
         <nav th:fragment="navbar" class="navbar navbar-expand-sm navbar-default" >
+            <div th:replace="form :: registerform"></div>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Logo</a>
@@ -13,7 +13,7 @@
                     <a class="nav-link" href="shopping_cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
                 </li>
                 <li class="nav-item">
-                    <a  href="#" data-target="#modalRegisterForm" data-toggle="modal" class="nav-link signup_modal_toggle"><span class="sign_up_text">Sign Up</span></a>
+                    <a href="#" data-target="#modalRegisterForm" data-toggle="modal" class="nav-link signup_modal_toggle"><span class="sign_up_text">Sign Up</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="#" data-target="#login" class="nav-link login_modal_toggle"><span class="login_text">Login</span></a>
