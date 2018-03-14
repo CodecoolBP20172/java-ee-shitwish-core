@@ -131,3 +131,56 @@ footer {
     background: rgb(82, 82, 82);
     box-shadow: 0 0 2px rgba(0, 0, 0, .2);
 }
+
+
+
+
+
+
+.img-header{
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+    opacity: 0.4;
+    margin-bottom: -20%;
+    margin-top: -15%;
+    -webkit-filter: grayscale(90%);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+
+
+}
+
+.header{
+    /*position: relative;*/
+    text-align: center;
+    color: rgb(241, 196,15);
+}
+
+
+.header-text{
+    position: absolute;
+    bottom: 50%;
+    right: 10%;
+    font-family: 'Neucha', cursive;
+    font-weight: bold;
+
+    text-shadow: #000 0px 0px 1px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.header button {
+    position: absolute;
+    bottom: 30%;
+    right: 30%;
+    font-family: 'Helvetica', serif;
+    border-radius: 0;
+    background-color: transparent;
+    border: 2px solid #ff9800;
+    color: orange;
+}
+
+
+
+
+
