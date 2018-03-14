@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.codecool.enterprise.shitwish.Model.UserJSON;
+import com.codecool.enterprise.shitwish.Model.*;
 import static com.codecool.enterprise.shitwish.util.JsonUtil.toJson;
 
 import java.io.IOException;
@@ -17,6 +17,8 @@ import java.io.IOException;
 public class UserController {
 
     private String REGISTERURL = "https://herokublabla/register";
+
+    private String LOGINURL = "https://herokublabla/login";
 
     @Autowired
     private ApiService apiService;
@@ -30,6 +32,17 @@ public class UserController {
             return "registration ok";
         }
         return "error at registration";
+    }
+
+    @PostMapping(value = "/login")
+    public String loginUser(@RequestBody LoginJSON loginData) throws IOException {
+        ResponseEntity<String> response = apiService.postJson(LOGINURL, toJson(loginData));
+        HttpStatus status = response.getStatusCode(); // status of the response
+        String restCall = response.getBody(); // body of the response
+        if (status==HttpStatus.OK) {
+            return "login ok";
+        }
+        return "error at login";
     }
 
 }

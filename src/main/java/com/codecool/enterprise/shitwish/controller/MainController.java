@@ -17,7 +17,7 @@ public class MainController {
 
     private String EXAMPLEAPIURL = "https://api.chucknorris.io/jokes/random"; // example api to get
 
-    private String PRODUCTSAPIURL = "productsapi.com";
+    private String PRODUCTSAPIURL = "https://herokublabla/all-products";
 
     @GetMapping(value = "/getjson") // example api get
     public String getJson() throws IOException {
