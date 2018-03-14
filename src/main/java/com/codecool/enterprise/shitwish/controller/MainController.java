@@ -3,13 +3,14 @@ package com.codecool.enterprise.shitwish.controller;
 import com.codecool.enterprise.shitwish.service.ApiService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
-@RestController
-public class Controller {
+@Controller
+public class MainController {
 
     @Autowired
     private ApiService apiService;
@@ -17,7 +18,6 @@ public class Controller {
     private String EXAMPLEAPIURL = "https://api.chucknorris.io/jokes/random"; // example api to get
 
     private String PRODUCTSAPIURL = "productsapi.com";
-    private String REGISTERURL = "https://herokublabla/register";
 
     @GetMapping(value = "/getjson") // example api get
     public String getJson() throws IOException {
@@ -29,12 +29,6 @@ public class Controller {
     public String landingPage(Model model) throws IOException {
         model.addAttribute("products", apiService.getJson(PRODUCTSAPIURL).toMap().toString());
         return "/index";
-    }
-
-    @GetMapping(value = "/register")
-    public void registerUser() throws IOException {
-        String userJsonString = ""; // information from the registration form parsed to json
-        apiService.postJson(REGISTERURL, userJsonString);
     }
 
 }

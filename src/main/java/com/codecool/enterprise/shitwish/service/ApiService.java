@@ -4,6 +4,7 @@ import org.json.JSONObject;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,13 +19,12 @@ public class ApiService {
         return new JSONObject(jsonText);
     }
 
-    public void postJson(String url, String requestJson) {
+    public ResponseEntity<String> postJson(String url, String requestJson) {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         
         HttpEntity<String> entity = new HttpEntity<String>(requestJson,headers);
-        String answer = restTemplate.postForObject(url, entity, String.class);
-        System.out.println(answer);
+        return restTemplate.postForEntity(url, entity, String.class);
     }
 }
