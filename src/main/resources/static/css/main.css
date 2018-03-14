@@ -152,7 +152,9 @@ footer {
 }
 
 .header{
-    /*position: relative;*/
+    background-image: url("/img/header3.jpeg");
+    background-size: 1366px 768px;
+    height:350px;
     text-align: center;
     color: rgb(241, 196,15);
 }
