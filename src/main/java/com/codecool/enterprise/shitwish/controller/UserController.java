@@ -1,8 +1,6 @@
 package com.codecool.enterprise.shitwish.controller;
 
 import com.codecool.enterprise.shitwish.service.ApiService;
-import com.codecool.enterprise.shitwish.service.UserService;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,9 +20,6 @@ public class UserController {
 
     @Autowired
     private ApiService apiService;
-
-    @Autowired
-    private UserService userService;
 
     @PostMapping(value = "/register")
     public String registerUser(@RequestBody UserJSON registerData) throws IOException {
