@@ -1,70 +1,27 @@
-.navbar {
-    background-color: #ecf0f1;
-}
-.navbar .navbar-brand {
-    color: #f1c40f;
-}
-.navbar .navbar-brand:hover,
-.navbar .navbar-brand:focus {
-    color: #000000;
-}
-.navbar .navbar-text {
-    color: #f1c40f;
-}
-.navbar .navbar-text a {
-    color: #ffffff;
-}
-.navbar .navbar-text a:hover,
-.navbar .navbar-text a:focus {
-    color: #000000;
-}
-.navbar .navbar-nav .nav-link {
-    color: #f1c40f;
-    border-radius: .25rem;
-    margin: 0 0.25em;
-}
-.navbar .navbar-nav .nav-link:not(.disabled):hover,
-.navbar .navbar-nav .nav-link:not(.disabled):focus {
-    color: #000000;
-}
-.navbar .navbar-nav .nav-item.active .nav-link,
-.navbar .navbar-nav .nav-item.active .nav-link:hover,
-.navbar .navbar-nav .nav-item.active .nav-link:focus,
-.navbar .navbar-nav .nav-item.show .nav-link,
-.navbar .navbar-nav .nav-item.show .nav-link:hover,
-.navbar .navbar-nav .nav-item.show .nav-link:focus {
-    color: #000000;
+#navbar_bg {
     background-color: #f1c40f;
-}
-.navbar .navbar-toggle {
-    border-color: #f1c40f;
-}
-.navbar .navbar-toggle:hover,
-.navbar .navbar-toggle:focus {
-    background-color: #f1c40f;
-}
-.navbar .navbar-toggle .navbar-toggler-icon {
-    color: #f1c40f;
-}
-.navbar .navbar-collapse,
-.navbar .navbar-form {
-    border-color: #f1c40f;
-}
-.navbar .navbar-link {
-    color: #f1c40f;
-}
-.navbar .navbar-link:hover {
-    color: #ffffff;
 }
 
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
-    color: #f1c40f;
+.navbar {
+    max-width: 1366px;
+    margin: auto;
+    height: 60px;
 }
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-    color: #ffffff;
+
+.nav.item {
+    margin-right: 8px;
 }
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
-    color: #ffffff;
-    background-color: #f1c40f;
+
+.nav-item a {
+    color: black;
 }
+
+.nav-item a i{
+    margin-right: 4px;
+}
+
+.nav-item a:hover {
+    color: black;
+    border: thin solid black;
+}
+
