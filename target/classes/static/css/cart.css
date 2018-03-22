@@ -1,0 +1,12 @@
+.head{
+    background-color: #f1c40f;
+    color: #000;
+}
+
+.container{
+    max-width: 90%;
+}
+
+.row:nth-of-type(even){
+    background-color: #ffffff;
+}

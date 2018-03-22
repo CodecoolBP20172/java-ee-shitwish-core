@@ -11,4 +11,7 @@ public class ViewController {
     public String renderRegisterPage() {
         return "index";
     }
+
+    @RequestMapping(value = "/shopping_cart", method = RequestMethod.GET)
+    public String renderCart() { return "cart";}
 }
