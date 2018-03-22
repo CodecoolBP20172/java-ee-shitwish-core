@@ -1,5 +1,6 @@
-.container{
-    width: 90%;
+#maincontainer{
+    max-width: 1366px; 
+    margin: auto;
 }
 
 body{
@@ -142,6 +143,7 @@ footer {
 
 
 .header{
+    position: relative;
     background: url("/img/header-edited.png") no-repeat;
     background-size: 1366px 768px;
     height:350px;
@@ -171,10 +173,10 @@ footer {
     color: #ffffff;
 }
 
-.linkbutton{
+.linkbuttons{
     position: absolute;
-    right: 14%;
-    bottom:45%;
+    right: 160px;
+    bottom:35px;
     margin-right: 5px;
 }
 
