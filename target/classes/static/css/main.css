@@ -126,7 +126,7 @@ footer {
     font-size: 8px;
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: -webkit-fill-available;
     height: 32px;
     padding: 6px;
     -webkit-transform: rotate(-1.2deg) scale(2);
@@ -141,20 +141,8 @@ footer {
 
 
 
-
-.img-header{
-    max-width: 100%;
-    height: auto;
-    width: auto\9; /* ie8 */
-    opacity: 0.4;
-    margin-bottom: -20%;
-    margin-top: -15%;
-
-
-}
-
 .header{
-    background-image: url("/img/header-edited.png");
+    background: url("/img/header-edited.png") no-repeat;
     background-size: 1366px 768px;
     height:350px;
     text-align: center;
