@@ -1,0 +1,42 @@
+#container{
+    display: table;
+    width: 100%;
+    max-width: 1366px;
+    margin: auto;
+}
+
+.img{
+    width: auto;
+    left: 100px;
+}
+
+article {
+    width: 100%;
+    padding: 20px;
+}
+
+#left-side{
+    position: absolute;
+    left: 0;
+    width: 50%;
+}
+
+#right-side{
+    position: absolute;
+    right: 0;
+    width: 50%;
+    background-color: #ffeb3b;
+}
+
+.carousel-img{
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.carousel-control-prev{
+    background-color: black;
+}
+
+.carousel-control-next{
+    background-color: black;
+}
