@@ -180,6 +180,36 @@ footer {
     margin-right: 5px;
 }
 
+#searchbox {
+    position: relative;
+    height: 100px;
+    background-color: rgba(17, 17, 17, 0.94);
+    text-align: center;
+}
+
+#searchbox label {
+    position: absolute;
+    color: #f1c40f;
+    left: 31%;
+    top: 30px;
+    z-index: 1;
+    font-size: 25px;
+}
+
+#searchbox input {
+    width: 45%;
+    position: absolute;
+    top: 25px;
+    transform: translate(-50%);
+    height: 45px;
+    padding-left: 45px;
+    border-style: none;
+    border: thin solid #f1c40f;
+    color: #f1c40f;
+    background-color: #4c4c4c;
+    font-size: 20px;
+}
+
 
 
 

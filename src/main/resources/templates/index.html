@@ -20,6 +20,10 @@
 <div th:replace="navbar :: navbar"></div>
 <div id="maincontainer">
     <div th:replace="header :: header"></div>
+    <div class="collapse" id="searchbox">
+        <label for="search"><i class="fa fa-search" aria-hidden="true"></i></label>
+        <input type="text" id="search" name="search"></input>
+    </div>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
