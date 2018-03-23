@@ -3,17 +3,26 @@
     color: #000;
 }
 
-#box{
+.box{
     max-width: 100%;
     border-radius: 2px 2px 2px 2px;
     border: 1px solid black;
-    margin: 0 auto 3%;
+    width: 65%;
+    margin: 3% auto;
 }
 
-.container{
-    margin-top: 3%;
-    max-width: 65%;
+.box:last-child{
+    border: none;
 }
+
+.box > a:first-child{
+    float: left;
+}
+
+.box > a:last-child{
+    float: right;
+}
+
 
 .row{
     margin-right: 0;
