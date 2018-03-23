@@ -12,7 +12,7 @@
 
 .container{
     margin-top: 3%;
-    max-width: 80%;
+    max-width: 65%;
 }
 
 .row{
@@ -40,7 +40,7 @@
     width: 33%;
 }
 
-.col-lg-2{
+.right{
     text-align: right;
     width: 33%;
 }

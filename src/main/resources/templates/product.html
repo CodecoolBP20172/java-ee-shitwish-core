@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="/css/navbar.css"/>
     <link rel="stylesheet" type="text/css" href="/css/product.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/footer.css"/>
 </head>
 <body>
     <div th:replace="navbar :: navbar"></div>
@@ -41,11 +42,37 @@
         </div>
         <div id="right-side">
             <article>
-                <h1>Card title: Adidas shirt</h1>
-                <h2>Seller: sevendiko</h2>
-                <h3>Price: 25%</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Product title</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Product description</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Seller</h3>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Price</h2>
+                    </div>
+                </div>
+
+
+                <p>Date: 2018.03.23</p>
+
             </article>
         </div>
     </div>
+    <footer th:replace="footer :: footer"></footer>
 </body>
 </html>
