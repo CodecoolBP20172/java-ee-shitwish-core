@@ -22,8 +22,8 @@
 </head>
 <body>
     <div th:replace="navbar :: navbar"></div>
-    <div class="container">
-        <div id="box">
+    <div id="maincontainer">
+        <div class="box">
             <div class="row head">
                 <div class="col col-lg-4">
                     <strong>Item</strong>
@@ -78,8 +78,10 @@
                 </div>
             </div>
         </div>
-        <a href="/"><button class="btn warning">Back to shopping</button></a>
-        <a href="/checkout"><button class="btn warning btn2">Checkout</button></a>
+        <div class="box">
+            <a href="/"><button class="btn warning">Back to shopping</button></a>
+            <a href="/checkout"><button class="btn warning btn2">Checkout</button></a>
+        </div>
     </div>
 </body>
 </html>
