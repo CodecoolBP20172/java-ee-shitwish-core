@@ -41,7 +41,7 @@ window.onload = function(){
     $('.login-button').click(function(event){
         event.preventDefault();
         let data = {
-            'username': $('#login_username').val(),
+            'userName': $('#login_username').val(),
             'password': $('#login_password').val(),
         };
 

@@ -27,8 +27,19 @@ public class MainController {
 
     @GetMapping(value = "/")
     public String landingPage(Model model) throws IOException {
-        model.addAttribute("products", apiService.getJson(PRODUCTSAPIURL).toMap().toString());
+        //model.addAttribute("products", apiService.getJson(PRODUCTSAPIURL).toMap().toString());
+
         return "/index";
+    }
+
+    //todo
+    @RequestMapping(value = "/shopping_cart", method = RequestMethod.GET)
+    public String renderCart() { return "cart";}
+
+    //todo
+    @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
+    public String renderCart(@PathVariable long id) {
+        return "product";
     }
 
 }
