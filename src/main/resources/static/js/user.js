@@ -41,9 +41,11 @@ window.onload = function(){
     $('.login-button').click(function(event){
         event.preventDefault();
         let data = {
-            'email': $('#login_email').val(),
+            'username': $('#login_username').val(),
             'password': $('#login_password').val(),
         };
+
+        console.log(data);
 
         $.ajax({
             type: 'POST',
