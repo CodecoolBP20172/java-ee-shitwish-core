@@ -1,6 +1,6 @@
 #maincontainer{
     max-width: 1366px;
-    margin: auto;
+    margin: auto auto 100px;
 }
 
 body{
@@ -8,19 +8,15 @@ body{
 }
 
 .carousel-control-prev{
-    width: 5%;
+    width: 8%;
 }
 
 .carousel-control-next{
-    width: 5%;
+    width: 8%;
 }
 
 .carousel-inner{
     background-color: #ecf0f1;
-}
-
-.carousel{
-    margin-bottom: 100px;
 }
 
 .header{
@@ -82,7 +78,6 @@ body{
     transform: translate(-50%);
     height: 45px;
     padding-left: 45px;
-    border-style: none;
     border: thin solid #f1c40f;
     color: #f1c40f;
     background-color: #4c4c4c;
