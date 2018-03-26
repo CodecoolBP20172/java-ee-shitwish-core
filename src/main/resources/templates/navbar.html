@@ -4,6 +4,7 @@
         <div th:fragment="navbar" id="navbar_bg">
             <nav class="navbar navbar-expand-sm navbar-default" >
                 <div th:replace="form :: registerform"></div>
+                <div th:replace="login :: loginform"></div>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Logo</a>
@@ -14,10 +15,10 @@
                         <a class="nav-link" href="/shopping_cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" data-target="#modalRegisterForm" data-toggle="modal" class="nav-link signup_modal_toggle"><i class="fa fa-user-plus" aria-hidden="true"></i>Sign up</a>
+                        <a href="#" data-toggle="modal" data-target="#modalRegisterForm" class="nav-link signup_modal_toggle"><i class="fa fa-user-plus" aria-hidden="true"></i>Sign up</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" data-target="#login" class="nav-link login_modal_toggle"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+                        <a href="#" data-toggle="modal" data-target="#modalLoginForm" class="nav-link login_modal_toggle"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
                     </li>
                 </ul>
             </nav>

@@ -89,7 +89,7 @@ body{
     margin-top: 10px;
 }
 
-#register-box {
+#register-box, login-box {
     text-align: center;
 }
 
