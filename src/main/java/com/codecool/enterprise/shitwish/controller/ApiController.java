@@ -15,10 +15,10 @@ public class ApiController {
 
     private String EXAMPLEAPIURL = "https://api.chucknorris.io/jokes/random";
 
-    @GetMapping(value = "/getjson")
+    /*@GetMapping(value = "/getjson")
     public String getJson() throws IOException {
         JSONObject jsonInfo = apiService.getJson(EXAMPLEAPIURL);
         return jsonInfo.toMap().toString();
-    }
+    }*/
 
 }
