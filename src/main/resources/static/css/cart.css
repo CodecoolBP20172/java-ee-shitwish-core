@@ -1,0 +1,59 @@
+.head{
+    background-color: #f1c40f;
+    color: #000;
+}
+
+.box{
+    max-width: 100%;
+    border-radius: 2px 2px 2px 2px;
+    border: 1px solid black;
+    width: 65%;
+    margin: 3% auto;
+}
+
+.box:last-child{
+    border: none;
+}
+
+.box > a:first-child{
+    float: left;
+}
+
+.box > a:last-child{
+    float: right;
+}
+
+
+.row{
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.row:last-child{
+    border-top: 1px black dashed;
+}
+
+.row:nth-of-type(even){
+    background-color: #ffffff;
+}
+
+.col{
+    text-align: left;
+    width: 33%;
+}
+
+.col-md-auto{
+    text-align: center;
+    width: 33%;
+}
+
+.right{
+    text-align: right;
+    width: 33%;
+}
+
+.container .btn2 {
+    float: right;
+}
