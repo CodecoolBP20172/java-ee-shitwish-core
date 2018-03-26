@@ -13,7 +13,14 @@ import java.io.IOException;
 public class MainController {
 
     //for test purpose only
-    String testProductsString = "{\"_embedded\" : {\"product\" : [\"listOfTags\" : [ ], \"name\" : \"Prod1\", \"price\" : 10.0, \"description\" : \"Hablaty\", \"status\" : \"ACTIVE\", \"_links\" : {\"self\" : {\"href\" : \"http://localhost:60001/products/1\"} \"product\" : {\"href\" : \"http://localhost:60001/products/1\"}}},{\"listOfTags\" : [ ],\"name\" : \"Prod2\", \"price\" : 200.0, \"description\" : \"Akarmi\", \"status\" : \"ACTIVE\", \"_links\" : {\"self\" : {\"href\" : \"http://localhost:60001/products/2\"}, \"product\" : {\"href\" : \"http://localhost:60001/products/2\"}}} ]}, \"_links\" : { \"self\" : { \"href\" : \"http://localhost:60001/products{?page,size,sort}\", \"templated\" : true}, \"profile\" : {\"href\" : \"http://localhost:60001/profile/products\"}, \"search\" : {\"href\" : \"http://localhost:60001/products/search\"}},\"page\" : {\"size\" : 20, \"totalElements\" : 2, \"totalPages\" : 1, \"number\" : 0}}";
+    String testProductsString = "{\"_embedded\" : {\"product\" : [\"listOfTags\" : [ ], \"name\" : \"Prod1\", \"price\" : 10.0, +" +
+            "\"description\" : \"Hablaty\", \"status\" : \"ACTIVE\", \"_links\" : {\"self\" : {\"href\" : \"http://localhost:60001/products/1\"}" +
+            "\"product\" : {\"href\" : \"http://localhost:60001/products/1\"}}},{\"listOfTags\" : [ ],\"name\" : \"Prod2\", \"price\" : 200.0," +
+            "\"description\" : \"Akarmi\", \"status\" : \"ACTIVE\", \"_links\" : {\"self\" : {\"href\" : \"http://localhost:60001/products/2\"}," +
+            "\"product\" : {\"href\" : \"http://localhost:60001/products/2\"}}} ]}, \"_links\" : { \"self\" : { \"href\" : " +
+            "\"http://localhost:60001/products{?page,size,sort}\", \"templated\" : true}, \"profile\" : {\"href\" : " +
+            "\"http://localhost:60001/profile/products\"}, \"search\" : {\"href\" : \"http://localhost:60001/products/search\"}},\"page\" : " +
+            "{\"size\" : 20, \"totalElements\" : 2, \"totalPages\" : 1, \"number\" : 0}}";
 
     @Autowired
     private ApiService apiService;
