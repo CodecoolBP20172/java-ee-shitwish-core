@@ -4,7 +4,6 @@ import com.codecool.enterprise.shitwish.service.ApiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -33,7 +32,7 @@ public class UserController {
         HttpStatus status = response.getStatusCode(); // status of the response
         String restCall = response.getBody(); // body of the response
         if (status==HttpStatus.OK) {
-            return "registration ok";
+            return "register request successfully sent. Body: " + restCall;
         }
         return "error at registration";
     }
@@ -44,7 +43,7 @@ public class UserController {
         HttpStatus status = response.getStatusCode(); // status of the response
         String restCall = response.getBody(); // body of the response
         if (status==HttpStatus.OK) {
-            return "login ok";
+            return "login request successfully sent. Body: " + restCall;
         }
         return "error at login";
     }
