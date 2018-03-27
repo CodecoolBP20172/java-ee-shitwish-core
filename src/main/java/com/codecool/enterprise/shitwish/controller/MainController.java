@@ -41,8 +41,15 @@ public class MainController {
 
     //todo
     @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
-    public String renderCart(@PathVariable long id) {
+    public String renderProduct(@PathVariable long id) {
         return "product";
     }
+
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+    public String renderUser(@PathVariable long id) {
+        return "userpage";
+    }
+
+
 
 }
