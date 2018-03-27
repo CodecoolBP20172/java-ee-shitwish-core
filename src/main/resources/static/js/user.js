@@ -10,9 +10,9 @@ window.onload = function() {
         "emailInvalid": "That does not look like a valid email!"
     };
 
-
     $('.register-button').click(function (event) {
         event.preventDefault();
+        let counter = 0;
         let data = {
             'email': $('#email').val(),
             'firstName': $('#firstName').val(),
@@ -24,18 +24,28 @@ window.onload = function() {
         };
         console.log(data);
 
-        $.ajax({
-            type: 'POST',
-            contentType: 'application/JSON',
-            url: '/api/register',
-            data: JSON.stringify(data),
-            success: function (response) {
-                console.log(response);
-            },
-            error: function (response) {
-                console.log(response);
+        $('.regInput').each(function () {
+            let element = this;
+            if (fieldValidation(element)) {
+                counter++;
             }
         });
+
+        if (counter === 7) {
+            console.log("we got in");
+            $.ajax({
+                type: 'POST',
+                contentType: 'application/JSON',
+                url: '/api/register',
+                data: JSON.stringify(data),
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            });
+        }
     });
 
     $('.login-button').click(function (event) {
