@@ -61,11 +61,20 @@ public class MainController {
         return "cart";}
 
     @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
+
     public String renderCart(@PathVariable long id, Model model) {
         //commented out till products ms is up on heroku:
         //model.addAttribute("product", apiService.getJson(PRODUCTAPIURL).toMap().toString());
-        model.addAttribute("product", testProductString); //till products ms not available
+        model.addAttribute("product", testProductString); //till products ms not availabl
+ 
         return "product";
     }
+
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+    public String renderUser(@PathVariable long id) {
+        return "userpage";
+    }
+
+
 
 }
