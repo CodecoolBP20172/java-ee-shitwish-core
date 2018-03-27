@@ -24,14 +24,6 @@ window.onload = function() {
         };
         console.log(data);
 
-        let textOk = whiteSpaceOnly(data.get("email"))
-            & whiteSpaceOnly(data.get("firstName"))
-            & whiteSpaceOnly(data.get("lastName"))
-            & whiteSpaceOnly(data.get("userName"))
-            & whiteSpaceOnly(data.get("city"))
-            & whiteSpaceOnly(data.get("password"))
-            & whiteSpaceOnly(data.get("passwordAgain"));
-
         $.ajax({
             type: 'POST',
             contentType: 'application/JSON',
@@ -79,7 +71,6 @@ window.onload = function() {
                 $(field).css("background-color", "coral");
             }
         });
-        element.setCustomValidity("Wrong input FAM!");
     });
 };
 
