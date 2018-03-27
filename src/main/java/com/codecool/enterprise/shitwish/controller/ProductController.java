@@ -2,6 +2,7 @@ package com.codecool.enterprise.shitwish.controller;
 
 import com.codecool.enterprise.shitwish.Model.ProductJSON;
 import com.codecool.enterprise.shitwish.service.ApiService;
+import com.codecool.enterprise.shitwish.session.UserSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,9 @@ public class ProductController {
 
     @Autowired
     private ApiService apiService;
+
+    @Autowired
+    private UserSession session;
 
     @PostMapping(value = "/api/saveproduct")
     public String saveProduct(@RequestBody ProductJSON productData) throws IOException {
