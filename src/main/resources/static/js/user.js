@@ -79,7 +79,14 @@ function fieldValidation(field) {
     let whiteSpaceOnly = isWhiteSpaceOnly(field.value);
     let startUpperCase = isStartUpperCase(field.value);
     let lettersOnly = isLettersOnly(field.value);
-    return isEmpty || !whiteSpaceOnly && startUpperCase && lettersOnly;
+    if(field.id === "email" || field.id === "password" || field.id === "userName") {
+        return true;
+    } else if (field.id === "passwordAgain") {
+        let psw = $("#password").val();
+        return field.value === psw;
+    } else {
+        return isEmpty || !whiteSpaceOnly && startUpperCase && lettersOnly;
+    }
 }
 
 function isWhiteSpaceOnly(value) {
