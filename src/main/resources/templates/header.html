@@ -3,11 +3,15 @@
 <body>
 <div class="header" th:fragment="header">
     <h3 class="linkbuttons">
-        <form action="/add_product">
-            <button class="btn warning">Sell your mismatched gift here!</button>
-        </form>
+        <div>
+            <form action="/add_product">
+                <button class="btn warning">Sell your mismatched gift here!</button>
+            </form>
 
-        <button class="btn warning lb2" data-toggle="collapse" data-target="#searchbox" aria-expanded="false" aria-controls="searchbox">Search for a better one</button>
+            <form>
+                <button class="btn warning lb2" data-toggle="collapse" data-target="#searchbox" aria-expanded="false" aria-controls="searchbox">Search for a better one</button>
+            </form>
+        </div>
     </h3>
 </div>
 </body>

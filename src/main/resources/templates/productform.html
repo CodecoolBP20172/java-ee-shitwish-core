@@ -29,7 +29,41 @@
     <div th:replace="navbar :: navbar"></div>
     <div id="container">
         <div th:replace="header :: header"></div>
-        Valami
+
+        <div>
+            <p></p>
+            <form id="product_form" action="/api/saveproduct" method="post">
+                <div>
+                    <label for="name">Name</label>
+                </div>
+                <div>
+                    <input type="text" id="name" size="67" name="product_name" required="required"></input>
+                </div>
+                <p></p>
+
+                <div>
+                    <label for="price">Price</label>
+                </div>
+                <div>
+                    <input type="text" id="price" size="67" name="product_price" required="required"></input>
+                </div>
+                <p></p>
+
+                <div>
+                    <label for="desc">Description</label>
+                </div>
+                <div>
+                    <textarea type="text" id="desc" cols="70" rows="10" name="product_desc" required="required"></textarea>
+                </div>
+                <p></p>
+
+                <div>
+                    <button class="btn warning lb2">Save your product</button>
+                </div>
+
+            </form>
+        </div>
+
     </div>
     <footer th:replace="footer :: footer"></footer>
 
