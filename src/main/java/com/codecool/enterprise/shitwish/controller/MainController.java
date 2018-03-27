@@ -81,7 +81,7 @@ public class MainController {
         return "userpage";
     }
 
-    @RequestMapping(value = '/add_product', method = RequestMethod.GET)
+    @RequestMapping(value = "/add_product", method = RequestMethod.GET)
     public String renderNewProductForm() { return "productform"; }
 
 }
