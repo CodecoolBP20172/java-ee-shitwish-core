@@ -1,0 +1,14 @@
+footer {
+    font-size: 8px;
+    position: fixed;
+    bottom: 0;
+    width: -webkit-fill-available;
+    height: 32px;
+    padding: 6px;
+    -webkit-transform: rotate(-1.2deg) scale(2);
+    transform: rotate(-1.2deg) scale(2);
+    text-align: center;
+    color: #fff;
+    background: rgba(17, 17, 17, 0.94);
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+}

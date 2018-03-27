@@ -1,0 +1,27 @@
+#navbar_bg {
+    background-color: #f1c40f;
+}
+
+.navbar {
+    max-width: 1366px;
+    margin: auto;
+    height: 60px;
+}
+
+.nav.item {
+    margin-right: 8px;
+}
+
+.nav-item a {
+    color: black;
+}
+
+.nav-item a i{
+    margin-right: 4px;
+}
+
+.nav-item a:hover {
+    color: black;
+    border: thin solid black;
+}
+
