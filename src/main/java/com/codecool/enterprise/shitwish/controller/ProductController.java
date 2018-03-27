@@ -22,14 +22,14 @@ public class ProductController {
     private ApiService apiService;
 
     @PostMapping(value = "/api/saveproduct")
-    public String registerUser(@RequestBody ProductJSON productData) throws IOException {
+    public String saveProduct(@RequestBody ProductJSON productData) throws IOException {
         System.out.println(productData.toString());
 
         ResponseEntity<String> response = apiService.postJson(SAVEPRODUCTURL, toJson(productData));
         HttpStatus status = response.getStatusCode(); // status of the response
         String restCall = response.getBody(); // body of the response
         if (status==HttpStatus.OK) {
-            return "save product ok";
+            return "save product request successfully sent. Body: " + restCall;
         }
         return "error at saving product";
     }
