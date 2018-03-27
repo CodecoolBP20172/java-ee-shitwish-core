@@ -76,4 +76,12 @@ public class MainController {
         return "product";
     }
 
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+    public String renderUser(@PathVariable long id) {
+        return "userpage";
+    }
+
+    @RequestMapping(value = '/add_product', method = RequestMethod.GET)
+    public String renderNewProductForm() { return "productform"; }
+
 }
