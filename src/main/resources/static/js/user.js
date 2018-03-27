@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function() {
     $('.register_errors').hide();
     $('.login_error').hide();
 
@@ -11,7 +11,7 @@ window.onload = function(){
     };
 
 
-    $('.register-button').click(function(event){
+    $('.register-button').click(function (event) {
         event.preventDefault();
         let data = {
             'email': $('#email').val(),
@@ -24,6 +24,14 @@ window.onload = function(){
         };
         console.log(data);
 
+        let textOk = whiteSpaceOnly(data.get("email"))
+            & whiteSpaceOnly(data.get("firstName"))
+            & whiteSpaceOnly(data.get("lastName"))
+            & whiteSpaceOnly(data.get("userName"))
+            & whiteSpaceOnly(data.get("city"))
+            & whiteSpaceOnly(data.get("password"))
+            & whiteSpaceOnly(data.get("passwordAgain"));
+
         $.ajax({
             type: 'POST',
             contentType: 'application/JSON',
@@ -32,13 +40,13 @@ window.onload = function(){
             success: function (response) {
                 console.log(response);
             },
-            error: function(response) {
+            error: function (response) {
                 console.log(response);
             }
         });
     });
 
-    $('.login-button').click(function(event){
+    $('.login-button').click(function (event) {
         event.preventDefault();
         let data = {
             'userName': $('#login_username').val(),
@@ -55,9 +63,43 @@ window.onload = function(){
             success: function (response) {
                 console.log(response);
             },
-            error: function(response) {
+            error: function (response) {
                 console.log(response);
             }
         });
     });
+
+    $('.regInput').each(function () {
+        let element = this;
+        $(element).keyup(function (event) {
+            let field = event.target;
+            if (fieldValidation(field)) {
+                $(field).css("background-color", "white");
+            } else {
+                $(field).css("background-color", "coral");
+            }
+        });
+        element.setCustomValidity("Wrong input FAM!");
+    });
 };
+
+function fieldValidation(field) {
+    let isEmpty = field.value.length === 0;
+    let whiteSpaceOnly = isWhiteSpaceOnly(field.value);
+    let startUpperCase = isStartUpperCase(field.value);
+    let lettersOnly = isLettersOnly(field.value);
+    return isEmpty || !whiteSpaceOnly && startUpperCase && lettersOnly;
+}
+
+function isWhiteSpaceOnly(value) {
+    let string = value.replace(/\s/g, "");
+    return string.length === 0;
+}
+
+function isStartUpperCase(value) {
+    return /^[A-Z]/.test(value);
+}
+
+function isLettersOnly(value) {
+    return /[A-Za-z]+/.test(value);
+}
