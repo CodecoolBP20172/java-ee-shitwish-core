@@ -4,12 +4,9 @@ import com.codecool.enterprise.shitwish.service.ApiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import com.codecool.enterprise.shitwish.Model.*;
-import org.springframework.web.bind.annotation.RestController;
 
 import static com.codecool.enterprise.shitwish.util.JsonUtil.toJson;
 
@@ -19,7 +16,6 @@ import java.io.IOException;
 public class UserController {
 
     private String REGISTERURL = "https://shitwish-user.herokuapp.com/register";
-
     private String LOGINURL = "https://shitwish-user.herokuapp.com/login";
 
     @Autowired

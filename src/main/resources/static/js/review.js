@@ -1,5 +1,8 @@
 window.onload = function(event){
     event.preventDefault();
+    let id = window.location.pathname.split("/user/")[1];
+    console.log(id);
+    renderReviews(id);
 
 
     $('#1').hover(function () {
@@ -66,51 +69,58 @@ window.onload = function(event){
     });
 };
 
-function renderReviews(userId) {
-    $.getJSON('http://herokublalbla.com/get-review/' + userId, function(data) {
-        for(var i = 0; i < data.length; i++) {
-            let author = data[i]["author"];
-            let review = data[i]["description"];
-            let rating = data[i]["rating"];
+let review = '';
+let rating = '';
 
-            /*for(var j = 0; j < rating; j++){
-                $(".rating").append(`<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align" disabled="disabled">
+function another(author, review, rating, title) {
+    let html = '';
+    for(var j = 0; j < rating; j++){
+        html += `<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align" disabled="disabled">
                                         <span class="fa fa-star" aria-hidden="true"></span>
-                                     </button>`);
-            }
-            for(var k = 0; k < 5 - rating; j++){
-                $(".rating").append(`<button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align" disabled="disabled">
+                                     </button>`;
+    }
+
+    var size = (5 - rating);
+
+    for(var k = 0; k < size; k++){
+        html += `<button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align" disabled="disabled">
                                         <span class="fa fa-star" aria-hidden="true"></span>
-                                     </button>`);
-            }*/
+                                     </button>`;
+    }
 
 
-            $(".review-block").append(`<div class="row">
+    $("#right-side").append(`      <div class="review-block">
+                                       <div class="row">
                                            <div class="col-sm-3">
                                                <div class="review-block-name"><a href="#">`+ author +`</a></div>
                                                <div class="review-block-date">March 26, 2018<br/>1 day ago</div>
                                            </div>
-                                           <div class="col-sm-9 rating">
-                                               <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align" disabled="disabled">
-                                               <span class="fa fa-star" aria-hidden="true"></span>
-                                               </button>
-                                               <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align" disabled="disabled">
-                                                   <span class="fa fa-star" aria-hidden="true"></span>
-                                               </button>
-                                               <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align" disabled="disabled">
-                                                   <span class="fa fa-star" aria-hidden="true"></span>
-                                               </button>
-                                               <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align" disabled="disabled">
-                                                   <span class="fa fa-star" aria-hidden="true"></span>
-                                               </button>
-                                               <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align" disabled="disabled">
-                                                   <span class="fa fa-star" aria-hidden="true"></span>
-                                               </button>
+                                           <div class="col-sm-9">` + html + `
+                                               
                                                <hr />
-                                               <div class="review-block-title">Correct deal</div>
+                                               <div class="review-block-title">`+title+`</div>
                                                <div class="review-block-description">`+ review + `</div>
                                            </div>
-                                       </div>`);
+                                       </div>
+                                   </div>`);
+}
+
+function renderReviews(userId) {
+    $.ajax({
+        type: "GET",
+        url: '/api/user/' + userId,
+        success: function(data){
+            var json = JSON.parse(data);
+            console.log(json);
+            for(var i=0; i<json["reviews"].length; i++){
+                review = json["reviews"][i]["description"];
+                rating = json["reviews"][i]["rating"];
+                let author = json["reviews"][i]["author"];
+                console.log(author);
+                let title = json["reviews"][i]["title"];
+                another(author, review, rating, title);
+            }
         }
-    });
+
+    })
 }
