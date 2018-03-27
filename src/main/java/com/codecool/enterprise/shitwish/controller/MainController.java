@@ -1,6 +1,7 @@
 package com.codecool.enterprise.shitwish.controller;
 
 import com.codecool.enterprise.shitwish.service.ApiService;
+import com.codecool.enterprise.shitwish.session.UserSession;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,6 +39,9 @@ public class MainController {
 
     @Autowired
     private ApiService apiService;
+
+    @Autowired
+    private UserSession session;
 
     private String PRODUCTSAPIURL = "https://herokublabla/all-products";
 
