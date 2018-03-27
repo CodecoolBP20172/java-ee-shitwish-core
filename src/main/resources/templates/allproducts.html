@@ -21,42 +21,36 @@
     <link rel="stylesheet" type="text/css" href="/css/navbar.css"/>
     <link rel="stylesheet" type="text/css" href="/css/footer.css"/>
     <link rel="stylesheet" type="text/css" href="/css/card.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/cardincarousel.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/allproducts.css"/>
 </head>
 <body>
-<div th:replace="navbar :: navbar"></div>
-<div id="maincontainer">
-    <div th:replace="header :: header"></div>
-    <div class="collapse" id="searchbox">
-        <label for="search"><i class="fa fa-search" aria-hidden="true"></i></label>
-        <input type="text" id="search" name="search"></input>
-    </div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
+    <div th:replace="navbar :: navbar"></div>
+    <div id="maincontainer">
+        <div class="row">
+            <div class="col col-sm-12">
                 <div th:replace="card :: card"></div>
                 <div th:replace="card :: card"></div>
-                <div th:replace="card :: card"></div>
-                <div th:replace="card :: card"></div>
-            </div>
-            <div class="carousel-item">
-                <div th:replace="card :: card"></div>
-            </div>
-            <div class="carousel-item">
                 <div th:replace="card :: card"></div>
                 <div th:replace="card :: card"></div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        <div class="row">
+            <div class="col col-sm-12">
+                <div th:replace="card :: card"></div>
+                <div th:replace="card :: card"></div>
+                <div th:replace="card :: card"></div>
+                <div th:replace="card :: card"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-sm-12">
+                <div th:replace="card :: card"></div>
+                <div th:replace="card :: card"></div>
+                <div th:replace="card :: card"></div>
+                <div th:replace="card :: card"></div>
+            </div>
+        </div>
     </div>
-</div>
-<footer th:replace="footer :: footer"></footer>
+    <footer th:replace="footer :: footer"></footer>
 </body>
 </html>

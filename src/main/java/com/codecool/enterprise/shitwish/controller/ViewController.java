@@ -27,5 +27,10 @@ public class ViewController {
         return "userpage";
     }
 
+    @RequestMapping(value = "/all-products", method = RequestMethod.GET)
+    public String renderAllProducts() {
+        return "allproducts";
+    }
+
 
 }
