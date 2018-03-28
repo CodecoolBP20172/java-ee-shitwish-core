@@ -1,6 +1,8 @@
 package com.codecool.enterprise.shitwish.controller;
 
 import com.codecool.enterprise.shitwish.service.ApiService;
+import com.codecool.enterprise.shitwish.session.UserSession;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +26,9 @@ public class UserController {
     @Autowired
     private ApiService apiService;
 
+    @Autowired
+    private UserSession session;
+
     @PostMapping(value = "/api/register")
     public String registerUser(@RequestBody UserJSON registerData) throws IOException {
         System.out.println(registerData.toString());
@@ -43,6 +48,13 @@ public class UserController {
         HttpStatus status = response.getStatusCode(); // status of the response
         String restCall = response.getBody(); // body of the response
         if (status==HttpStatus.OK) {
+            if (!restCall.equals("Login failed")) {
+                JSONObject bodyJSON = new JSONObject(restCall);
+                String userName = bodyJSON.getString("userName");
+                String userId = bodyJSON.getString("userId");
+                session.setAttribute("userName", userName);
+                session.setAttribute("userId", userId);
+            }
             return "login request successfully sent. Body: " + restCall;
         }
         return "error at login";
