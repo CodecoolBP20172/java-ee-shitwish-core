@@ -54,6 +54,7 @@ public class MainController {
         //commented out till products ms is up on heroku:
         //model.addAttribute("products", apiService.getJson(PRODUCTSAPIURL).toMap().toString());
         model.addAttribute("products", testAllProductsString); //till products ms not available
+        System.out.println(testAllProductsString);
         return "/index";
     }
 
