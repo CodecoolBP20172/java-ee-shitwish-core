@@ -37,7 +37,7 @@ public class ApiController {
                 "&title=" + json.getTitle() +
                 "&reviewText=" + json.getComment() +
                 "&rating=" + json.getRating();
-    };
+    }
 
 
 
