@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.io.IOException;
 
 @Controller
@@ -48,6 +49,11 @@ public class MainController {
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
     public String renderUser(@PathVariable long id) {
         return "userpage";
+    }
+
+    @RequestMapping(value = "/checkout", method = RequestMethod.GET)
+    public String renderCheckout() {
+        return "checkout";
     }
 
 
