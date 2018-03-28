@@ -39,7 +39,7 @@ public class ProductController {
         String restCall = response.getBody(); // body of the response
         if (status==HttpStatus.OK) {
             System.out.println(restCall);
-            return "save product request successfully sent. Body: " + restCall;
+            return "index";
         }
         return "error at saving product";
     }
