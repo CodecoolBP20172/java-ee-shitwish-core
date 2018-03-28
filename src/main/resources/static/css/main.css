@@ -1,4 +1,4 @@
-#maincontainer{
+#maincontainer, #container{
     max-width: 1366px;
     padding-left: 2%;
     padding-right: 2%;
@@ -113,6 +113,10 @@ body{
 .modal-inputfield input:focus {
     border-bottom: solid #f1c40f;
     outline: none;
+}
+
+#product_form {
+    text-align: center;
 }
 
 
