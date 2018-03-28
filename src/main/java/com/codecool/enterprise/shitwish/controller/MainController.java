@@ -43,7 +43,7 @@ public class MainController {
     @Autowired
     private UserSession session;
 
-    private String PRODUCTSAPIURL = "https://herokublabla/all-products";
+    private String PRODUCTSAPIURL = "http://shitwish-product.herokuapp.com/products/search/findByActive?status=true";
 
     private String CARTAPIURL = "https://herokublabla/all-products";
 
@@ -52,9 +52,10 @@ public class MainController {
     @GetMapping(value = "/")
     public String landingPage(Model model) throws IOException {
         //commented out till products ms is up on heroku:
-        //model.addAttribute("products", apiService.getJson(PRODUCTSAPIURL).toMap().toString());
-        model.addAttribute("products", testAllProductsString); //till products ms not available
-        System.out.println(testAllProductsString);
+        //System.out.println(apiService.getJson(PRODUCTSAPIURL));
+        model.addAttribute("products", apiService.getJson(PRODUCTSAPIURL).getJSONObject("_embedded").getJSONArray("product"));
+        //model.addAttribute("products", testAllProductsString); //till products ms not available
+        //System.out.println(testAllProductsString);
         return "/index";
     }
 
