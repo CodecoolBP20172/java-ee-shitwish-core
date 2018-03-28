@@ -64,16 +64,13 @@ public class MainController {
         return "userpage";
     }
 
-<<<<<<< HEAD
     @RequestMapping(value = "/checkout", method = RequestMethod.GET)
     public String renderCheckout() {
         return "checkout";
     }
 
 
-=======
     @RequestMapping(value = "/add_product", method = RequestMethod.GET)
     public String renderNewProductForm() { return "productform"; }
->>>>>>> develop
 
 }
