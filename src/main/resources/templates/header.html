@@ -3,8 +3,12 @@
 <body>
 <div class="header" th:fragment="header">
     <h3 class="linkbuttons">
-        <button class="btn warning">Sell your mismatched gift here!</button>
-        <button class="btn warning lb2" data-toggle="collapse" data-target="#searchbox" aria-expanded="false" aria-controls="searchbox">Search for a better one</button>
+        <div>
+            <form>
+                <button type="submit" formaction="/add_product" class="btn warning">Sell your mismatched gift here!</button>
+                <button class="btn warning lb2" data-toggle="collapse" data-target="#searchbox" aria-expanded="false" aria-controls="searchbox">Search for a better one</button>
+            </form>
+        </div>
     </h3>
 </div>
 </body>

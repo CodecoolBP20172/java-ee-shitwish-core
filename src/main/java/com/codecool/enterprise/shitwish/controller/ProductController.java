@@ -33,6 +33,7 @@ public class ProductController {
         HttpStatus status = response.getStatusCode(); // status of the response
         String restCall = response.getBody(); // body of the response
         if (status==HttpStatus.OK) {
+            System.out.println(restCall);
             return "save product request successfully sent. Body: " + restCall;
         }
         return "error at saving product";
