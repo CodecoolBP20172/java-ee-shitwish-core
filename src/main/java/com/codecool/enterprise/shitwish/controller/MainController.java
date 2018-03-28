@@ -2,14 +2,13 @@ package com.codecool.enterprise.shitwish.controller;
 
 import com.codecool.enterprise.shitwish.service.ApiService;
 import com.codecool.enterprise.shitwish.session.UserSession;
-import org.json.JSONObject;
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.Objects;
 
 @Controller
 public class MainController {
@@ -38,9 +37,15 @@ public class MainController {
 
     @GetMapping(value = "/")
     public String landingPage(Model model) throws IOException {
-        model.addAttribute("products", apiService.getJson(PRODUCTSAPIURL).toMap().toString());
-        return "/index";
+        //commented out till products ms is up on heroku:
+        //System.out.println(apiService.getJson(PRODUCTSAPIURL));
+        model.addAttribute("products", apiService.getJson(PRODUCTSAPIURL).getJSONObject("_embedded").getJSONArray("product"));
+        //model.addAttribute("products", testAllProductsString); //till products ms not available
+        //System.out.println(testAllProductsString);
+        return "index";
     }
+
+
 
     @RequestMapping(value = "/shopping_cart", method = RequestMethod.GET)
     public String renderCart(Model model) {

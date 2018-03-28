@@ -3,6 +3,7 @@ package com.codecool.enterprise.shitwish.controller;
 import com.codecool.enterprise.shitwish.Model.ReviewJSON;
 import com.codecool.enterprise.shitwish.service.ApiService;
 import com.codecool.enterprise.shitwish.session.UserSession;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,9 @@ public class ApiController {
 
     private String reviewURL = "http://shitwish-review.herokuapp.com/";
 
+    private String PRODUCTSAPIURL = "http://shitwish-product.herokuapp.com/products/search/findByActive?status=true";
+    https://shitwish-product.herokuapp.com/products?page=1&size=3
+
     @GetMapping(value = "/api/user/{id}")
     public String getReviews(@PathVariable long id) throws IOException {
         return apiService.getJson(reviewURL + "get-review/" + id).toString();
@@ -43,6 +47,10 @@ public class ApiController {
                 "&rating=" + json.getRating();
     }
 
+    @GetMapping(value = "/render-products", produces = "application/json")
+    public String renderProducts() throws IOException {
+        return apiService.getJson(PRODUCTSAPIURL).getJSONObject("_embedded").getJSONArray("product").toString();
+    }
 
 
 }
