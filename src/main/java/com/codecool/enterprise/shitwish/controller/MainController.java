@@ -31,7 +31,7 @@ public class MainController {
 
     private String PRODUCTSAPIURL = "http://shitwish-product.herokuapp.com/products/search/findByActive?status=true";
 
-    private String CARTAPIURL = "https://herokublabla/all-products";
+    private String CARTAPIURL = "https://herokublabla/all-products"; // note ready yet
 
     private String PRODUCTAPIURL = "http://shitwish-product.herokuapp.com/products/search/findById?id=";
 
