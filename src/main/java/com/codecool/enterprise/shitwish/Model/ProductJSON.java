@@ -7,6 +7,13 @@ public class ProductJSON {
     private String description;
     private String userId; //from session
 
+    public ProductJSON(String name, String price, String description, String userId) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.userId = userId;
+    }
+
     public String getName() {
         return name;
     }
@@ -38,5 +45,6 @@ public class ProductJSON {
     public void setUserId(String userId) {
         this.userId = userId;
     }
-    
+
+
 }
