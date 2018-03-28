@@ -5,12 +5,16 @@ import com.codecool.enterprise.shitwish.service.ApiService;
 import com.codecool.enterprise.shitwish.session.UserSession;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import static com.codecool.enterprise.shitwish.util.JsonUtil.toJson;
 
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 public class ApiController {
