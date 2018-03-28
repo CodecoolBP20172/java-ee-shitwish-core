@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.Objects;
 
 @Controller
 public class MainController {
@@ -77,6 +78,9 @@ public class MainController {
 
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
     public String renderUser(@PathVariable long id) {
+        if(session.getAttribute("userId") == null){
+            return "redirect:/";
+        }
         return "userpage";
     }
 
