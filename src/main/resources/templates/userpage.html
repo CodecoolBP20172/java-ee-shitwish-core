@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="/css/review.css"/>
 <body>
 <div th:replace="navbar::navbar"></div>
+<div th:replace="reviewmodal :: reviewmodal"></div>
     <div id="maincontainer">
         <div class="content">
             <div class="row">
@@ -47,19 +48,19 @@
                     <div class="rating-block">
                         <h4>Average user rating</h4>
                         <h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
-                        <button id="1" type="button" class="btn btn-warning btn-grey btn-sm" aria-label="Left Align">
+                        <button id="1" data-toggle="modal" data-target="#modalReview" data-id="1" type="button" class="btn btn-warning btn-grey btn-sm" aria-label="Left Align">
                             <span class="fa fa-star" aria-hidden="true"></span>
                         </button>
-                        <button id="2" type="button" class="btn btn-warning btn-grey btn-sm" aria-label="Left Align">
+                        <button id="2" data-toggle="modal" data-target="#modalReview" data-id="2" type="button" class="btn btn-warning btn-grey btn-sm" aria-label="Left Align">
                             <span class="fa fa-star" aria-hidden="true"></span>
                         </button>
-                        <button id="3" type="button" class="btn btn-warning btn-grey btn-sm" aria-label="Left Align">
+                        <button id="3" data-toggle="modal" data-target="#modalReview" data-id="3" type="button" class="btn btn-warning btn-grey btn-sm" aria-label="Left Align">
                             <span class="fa fa-star" aria-hidden="true"></span>
                         </button>
-                        <button id="4" type="button" class="btn btn-warning btn-grey btn-sm" aria-label="Left Align">
+                        <button id="4" data-toggle="modal" data-target="#modalReview" data-id="4" type="button" class="btn btn-warning btn-grey btn-sm" aria-label="Left Align">
                             <span class="fa fa-star" aria-hidden="true"></span>
                         </button>
-                        <button id="5" type="button" class="btn btn-warning btn-grey btn-sm" aria-label="Left Align">
+                        <button id="5" data-toggle="modal" data-target="#modalReview" data-id="5" type="button" class="btn btn-warning btn-grey btn-sm" aria-label="Left Align">
                             <span class="fa fa-star" aria-hidden="true"></span>
                         </button>
                     </div>

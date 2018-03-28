@@ -3,6 +3,15 @@ window.onload = function(event){
     let id = window.location.pathname.split("/user/")[1];
     renderReviews(id);
 
+    $(".btn").each(function(){
+        $(this).click(function(rating) {
+            rating = $(this).data("id");
+            modalOpen(rating);
+        });
+    });
+
+    passData(id);
+
 
     $('#1').hover(function () {
         $('#1').css("background-color", "#e0a800");
@@ -118,4 +127,35 @@ function renderReviews(userId) {
         }
 
     })
+}
+
+
+
+function modalOpen(id) {
+    $('#modalReview').on('show.bs.modal', function() {
+        $("#rating").html(id);
+    });
+}
+
+function passData(id) {
+    $('.post-review').click(function(event){
+        event.preventDefault();
+        let data = {
+            'rating': $('#rating').html(),
+            'title': $('#title').val(),
+            'comment': $('#comment').val(),
+            'userId' : id
+        };
+        console.log(data);
+
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/JSON',
+            url: '/api/add-review',
+            data: JSON.stringify(data),
+            success: function (response) {
+                console.log(response);
+            },
+        });
+    });
 }
