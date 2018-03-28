@@ -1,5 +1,16 @@
 window.onload = function(event){
     event.preventDefault();
+    let id = window.location.pathname.split("/user/")[1];
+    renderReviews(id);
+
+    $(".btn").each(function(){
+        $(this).click(function(rating) {
+            rating = $(this).data("id");
+            modalOpen(rating);
+        });
+    });
+
+    passData(id);
 
 
     $('#1').hover(function () {
@@ -66,51 +77,85 @@ window.onload = function(event){
     });
 };
 
+function manipulateDom(author, review, rating, title, date) {
+    let html = '';
+
+    for(var j = 0; j < rating; j++){
+        html += `<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align" disabled="disabled"> 
+                    <span class="fa fa-star" aria-hidden="true"></span> 
+                 </button>`;
+    }
+
+    for(var k = 0; k < (5 - rating); k++){
+        html += `<button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align" disabled="disabled">
+                    <span class="fa fa-star" aria-hidden="true"></span>
+                 </button>`;
+    }
+
+
+    $("#right-side").append(`<div class="review-block">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="review-block-name"><a href="#">${author}</a></div>
+                                        <div class="review-block-date">${date}</div>
+                                    </div>
+                                    <div class="col-sm-9">${html}
+                                               
+                                        <hr />
+                                        <div class="review-block-title">${title}</div>
+                                        <div class="review-block-description">${review}</div>
+                                    </div>
+                                </div>
+                            </div>`);
+}
+
 function renderReviews(userId) {
-    $.getJSON('http://herokublalbla.com/get-review/' + userId, function(data) {
-        for(var i = 0; i < data.length; i++) {
-            let author = data[i]["author"];
-            let review = data[i]["description"];
-            let rating = data[i]["rating"];
-
-            /*for(var j = 0; j < rating; j++){
-                $(".rating").append(`<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align" disabled="disabled">
-                                        <span class="fa fa-star" aria-hidden="true"></span>
-                                     </button>`);
+    $.ajax({
+        type: "GET",
+        url: '/api/user/' + userId,
+        success: function(data){
+            var json = JSON.parse(data);
+            console.log(json);
+            for(var i=0; i<json["reviews"].length; i++){
+                let review = json["reviews"][i]["description"];
+                let rating = json["reviews"][i]["rating"];
+                let author = json["reviews"][i]["author"];
+                let title = json["reviews"][i]["title"];
+                let date = json["reviews"][i]["date"];
+                manipulateDom(author, review, rating, title, date);
             }
-            for(var k = 0; k < 5 - rating; j++){
-                $(".rating").append(`<button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align" disabled="disabled">
-                                        <span class="fa fa-star" aria-hidden="true"></span>
-                                     </button>`);
-            }*/
-
-
-            $(".review-block").append(`<div class="row">
-                                           <div class="col-sm-3">
-                                               <div class="review-block-name"><a href="#">`+ author +`</a></div>
-                                               <div class="review-block-date">March 26, 2018<br/>1 day ago</div>
-                                           </div>
-                                           <div class="col-sm-9 rating">
-                                               <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align" disabled="disabled">
-                                               <span class="fa fa-star" aria-hidden="true"></span>
-                                               </button>
-                                               <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align" disabled="disabled">
-                                                   <span class="fa fa-star" aria-hidden="true"></span>
-                                               </button>
-                                               <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align" disabled="disabled">
-                                                   <span class="fa fa-star" aria-hidden="true"></span>
-                                               </button>
-                                               <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align" disabled="disabled">
-                                                   <span class="fa fa-star" aria-hidden="true"></span>
-                                               </button>
-                                               <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align" disabled="disabled">
-                                                   <span class="fa fa-star" aria-hidden="true"></span>
-                                               </button>
-                                               <hr />
-                                               <div class="review-block-title">Correct deal</div>
-                                               <div class="review-block-description">`+ review + `</div>
-                                           </div>
-                                       </div>`);
         }
+
+    })
+}
+
+
+
+function modalOpen(id) {
+    $('#modalReview').on('show.bs.modal', function() {
+        $("#rating").html(id);
+    });
+}
+
+function passData(id) {
+    $('.post-review').click(function(event){
+        event.preventDefault();
+        let data = {
+            'rating': $('#rating').html(),
+            'title': $('#title').val(),
+            'comment': $('#comment').val(),
+            'userId' : id
+        };
+        console.log(data);
+
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/JSON',
+            url: '/api/add-review',
+            data: JSON.stringify(data),
+            success: function (response) {
+                console.log(response);
+            },
+        });
     });
 }

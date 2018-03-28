@@ -1,6 +1,7 @@
 package com.codecool.enterprise.shitwish.controller;
 
 import com.codecool.enterprise.shitwish.service.ApiService;
+import com.codecool.enterprise.shitwish.session.UserSession;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,35 +15,64 @@ import java.io.IOException;
 public class MainController {
 
     //for test purpose only
-    String testProductsString = "{\"_embedded\" : {\"product\" : [\"listOfTags\" : [ ], \"name\" : \"Prod1\", \"price\" : 10.0, \"description\" : \"Hablaty\", \"status\" : \"ACTIVE\", \"_links\" : {\"self\" : {\"href\" : \"http://localhost:60001/products/1\"} \"product\" : {\"href\" : \"http://localhost:60001/products/1\"}}},{\"listOfTags\" : [ ],\"name\" : \"Prod2\", \"price\" : 200.0, \"description\" : \"Akarmi\", \"status\" : \"ACTIVE\", \"_links\" : {\"self\" : {\"href\" : \"http://localhost:60001/products/2\"}, \"product\" : {\"href\" : \"http://localhost:60001/products/2\"}}} ]}, \"_links\" : { \"self\" : { \"href\" : \"http://localhost:60001/products{?page,size,sort}\", \"templated\" : true}, \"profile\" : {\"href\" : \"http://localhost:60001/profile/products\"}, \"search\" : {\"href\" : \"http://localhost:60001/products/search\"}},\"page\" : {\"size\" : 20, \"totalElements\" : 2, \"totalPages\" : 1, \"number\" : 0}}";
+    String testAllProductsString = "{\"_embedded\" : {\"product\" : [\"listOfTags\" : [ ], \"name\" : \"Prod1\", \"price\" : 10.0, +" +
+            "\"description\" : \"Hablaty\", \"active\" : \"true\", \"_links\" : {\"self\" : {\"href\" : \"http://localhost:60001/products/1\"}" +
+            "\"product\" : {\"href\" : \"http://localhost:60001/products/1\"}}},{\"listOfTags\" : [ ],\"name\" : \"Prod2\", \"price\" : 200.0," +
+            "\"description\" : \"Akarmi\", \"active\" : \"true\", \"_links\" : {\"self\" : {\"href\" : \"http://localhost:60001/products/2\"}," +
+            "\"product\" : {\"href\" : \"http://localhost:60001/products/2\"}}} ]}, \"_links\" : { \"self\" : { \"href\" : " +
+            "\"http://localhost:60001/products{?page,size,sort}\", \"templated\" : true}, \"profile\" : {\"href\" : " +
+            "\"http://localhost:60001/profile/products\"}, \"search\" : {\"href\" : \"http://localhost:60001/products/search\"}},\"page\" : " +
+            "{\"size\" : 20, \"totalElements\" : 2, \"totalPages\" : 1, \"number\" : 0}}";
+
+    //for test purpose only
+    String testCartProductsString = "{\"_embedded\" : {\"product\" : [\"listOfTags\" : [ ], \"name\" : \"Prod1\", \"price\" : 10.0, +" +
+            "\"description\" : \"Hablaty\", \"active\" : \"true\", \"_links\" : {\"self\" : {\"href\" : \"http://localhost:60001/products/1\"}" +
+            "\"product\" : {\"href\" : \"http://localhost:60001/products/1\"}}},{\"listOfTags\" : [ ],\"name\" : \"Prod2\", \"price\" : 200.0," +
+            "\"description\" : \"Akarmi\", \"active\" : \"true\", \"_links\" : {\"self\" : {\"href\" : \"http://localhost:60001/products/2\"}," +
+            "\"product\" : {\"href\" : \"http://localhost:60001/products/2\"}}} ]}, \"_links\" : { \"self\" : { \"href\" : " +
+            "\"http://localhost:60001/products{?page,size,sort}\", \"templated\" : true}, \"profile\" : {\"href\" : " +
+            "\"http://localhost:60001/profile/products\"}, \"search\" : {\"href\" : \"http://localhost:60001/products/search\"}},\"page\" : " +
+            "{\"size\" : 20, \"totalElements\" : 2, \"totalPages\" : 1, \"number\" : 0}}";
+
+    //for test purpose only
+    String testProductString = "{listOfTags : [ ], name : \"Prod1\", price : 10.0, description : \"Hablaty\", status : \"ACTIVE\", _links : " +
+            "{self : {href : \"http://localhost:60001/products/1\"}, product : {href : \"http://localhost:60001/products/1\"}}}";
 
     @Autowired
     private ApiService apiService;
 
-    private String EXAMPLEAPIURL = "https://api.chucknorris.io/jokes/random"; // example api to get
+    @Autowired
+    private UserSession session;
 
     private String PRODUCTSAPIURL = "https://herokublabla/all-products";
 
-    @GetMapping(value = "/getjson") // example api get
-    public String getJson() throws IOException {
-        JSONObject jsonInfo = apiService.getJson(EXAMPLEAPIURL);
-        return jsonInfo.toMap().toString();
-    }
+    private String CARTAPIURL = "https://herokublabla/all-products";
+
+    private String PRODUCTAPIURL = "https://herokublabla/all-products";
 
     @GetMapping(value = "/")
     public String landingPage(Model model) throws IOException {
-        //commented out till products ms is up on heroku //model.addAttribute("products", apiService.getJson(PRODUCTSAPIURL).toMap().toString());
-        model.addAttribute("products", testProductsString); //till products ms not up
+        //commented out till products ms is up on heroku:
+        //model.addAttribute("products", apiService.getJson(PRODUCTSAPIURL).toMap().toString());
+        model.addAttribute("products", testAllProductsString); //till products ms not available
+        System.out.println(testAllProductsString);
         return "/index";
     }
 
-    //todo
     @RequestMapping(value = "/shopping_cart", method = RequestMethod.GET)
-    public String renderCart() { return "cart";}
+    public String renderCart(Model model) {
+        //commented out till products ms is up on heroku:
+        //model.addAttribute("products", apiService.getJson(CARTAPIURL).toMap().toString());
+        model.addAttribute("products", testCartProductsString); //till products ms not available
+        return "cart";}
 
-    //todo
     @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
-    public String renderProduct(@PathVariable long id) {
+
+    public String renderCart(@PathVariable long id, Model model) {
+        //commented out till products ms is up on heroku:
+        //model.addAttribute("product", apiService.getJson(PRODUCTAPIURL).toMap().toString());
+        model.addAttribute("product", testProductString); //till products ms not availabl
+ 
         return "product";
     }
 
