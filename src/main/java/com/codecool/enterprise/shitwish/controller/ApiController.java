@@ -29,7 +29,6 @@ public class ApiController {
     private String reviewURL = "http://shitwish-review.herokuapp.com/";
 
     private String PRODUCTSAPIURL = "http://shitwish-product.herokuapp.com/products/search/findByActive?status=true";
-    //https://shitwish-product.herokuapp.com/products?page=1&size=3
 
     @GetMapping(value = "/api/user/{id}")
     public String getReviews(@PathVariable long id) throws IOException {
